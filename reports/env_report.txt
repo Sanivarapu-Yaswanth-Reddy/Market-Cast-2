@@ -1,0 +1,60 @@
+MarketCast environment report  2026-11-16T11:20:49
+Machine: DESKTOP-LQDHANP  OS: Windows-10-10.0.26300-SP0
+Python 3.11.18  at C:\Users\PC\.conda\envs\marketcast-data\python.exe
+Project root: C:\Users\PC\OneDrive\Desktop\Market Cast
+WARNING: project is inside OneDrive. Fine for code; keep large data outside it (decision Q-03).
+
+== Packages ==
+  OK       numpy                  2.4.6        [data+train]
+  OK       pandas                 3.1.1        [data+train]
+  OK       pyarrow                26.0.1       [data+train]
+  OK       duckdb                 2.0.0        [data+train]
+  OK       scipy                  1.17.1       [data+train]
+  OK       statsmodels            0.15.0       [data+train]
+  OK       arch                   9.0.0        [data+train]
+  OK       lightgbm               4.7.0        [data+train]
+  OK       scikit-learn           1.9.1        [data+train]
+  OK       pyyaml                 6.0.3        [data+train]
+  OK       tqdm                   4.70.1       [data+train]
+  OK       matplotlib             3.11.2       [data+train]
+  OK       pytest                 9.2.0        [dev]
+  OK       hypothesis             6.170.15     [dev]
+  OK       scoringrules           0.10.0       [dev (metric tests)]
+  OK       properscoring          0.1          [dev (metric tests)]
+  OK       mlflow                 3.18.0       [train]
+  OK       rich                   15.0.0       [dev]
+  later    torch                  -            [train]  (ModuleNotFoundError)
+  later    torch-geometric        -            [train]  (ModuleNotFoundError)
+  OK       imdlib                 0.4.0        [optional (IMD rainfall)]
+  optional chronos-forecasting    -            [optional (baseline B6)]  (ModuleNotFoundError)
+  optional timesfm                -            [optional (baseline B6)]  (ModuleNotFoundError)
+
+== GPU / PyTorch ==
+  torch not installed
+  nvidia-smi: not found on PATH
+
+== Tools ==
+  git         not found on PATH
+  conda       C:\ProgramData\anaconda3\condabin\conda.BAT
+  nvidia-smi  not found on PATH
+
+== Resources ==
+  Disk free at project drive: 207 GB of 476 GB
+  RAM: 15.7 GB total, 7.5 GB free
+  CPU threads: 8
+
+== Project data ==
+  raw/nse/cm                0 files
+  raw/nse/delivery          0 files
+  raw/nse/fo                0 files
+  raw/nse/indices           0 files
+  raw/nse/reference        39 files
+  raw/global               41 files
+  raw/factors              15 files
+  raw/flows                 1 files
+  raw/macro                 1 files
+  processed: NOT BUILT YET (run scripts\marketcast_build_panel.py)
+
+== Verdict ==
+  'later' = training-only package, expected to be absent on a machine without an NVIDIA GPU.
+  Missing required packages: none

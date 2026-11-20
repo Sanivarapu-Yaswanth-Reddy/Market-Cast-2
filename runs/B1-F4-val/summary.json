@@ -1,0 +1,22 @@
+{
+  "run_id": "B1-F4-val@9b9e91f83183",
+  "run_name": "B1-F4-val",
+  "config_hash": "9b9e91f831834f51cfb8c4050eb3a5c594b6b8e5a5defd7dce7adcc37a4f8cdc",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:fe208cfdb148bb500cc888903b3cc251d74cbfc52dde1625cbd6cc32634a117b",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 5,
+  "minutes": 0.02,
+  "crps_h1": 0.5464235287739647,
+  "crps_h5": 0.6655043221898161,
+  "crps_h20": 0.7259712004674101,
+  "qlike_h1": 0.3882069494113701,
+  "qlike_h5": 0.24559267004449126,
+  "qlike_h20": 0.195177766553203,
+  "in90_h1": 0.9011698265429609,
+  "in90_h5": 0.8607128226136829,
+  "in90_h20": 0.8363331938049393
+}

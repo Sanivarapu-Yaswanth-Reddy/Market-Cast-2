@@ -1,0 +1,37 @@
+# Training defaults (04 "Training recipe"). A model config (configs/model/*.yaml) is merged on top of this,
+# and `--set train.key=value` on the command line on top of that. The resolved config is saved and hashed
+# with every run (runs/<run>/config.json).
+train:
+  # ---- optimisation
+  max_steps: 40000          # optimiser steps (one step = dates_per_step decision dates)
+  dates_per_step: 2         # gradient-accumulated market graphs per step
+  n_samples: 2              # noise scenarios per date (FGN: 2 is enough for fair CRPS)
+  lr: 3.0e-4                # peak learning rate (AdamW)
+  lr_min: 3.0e-6            # cosine floor
+  warmup_steps: 1000
+  weight_decay: 0.05
+  grad_clip: 1.0
+  ema: 0.999                # EMA of weights; the EMA is what is evaluated and saved as "best"
+  amp: true                 # bfloat16 autocast on CUDA (ignored on CPU)
+  # ---- stage
+  k_steps: 1                # 1 = single-step (S1); 5 then 10 = unrolled fine-tuning (S3)
+  init_from: null           # checkpoint path (relative to the project root) to warm-start from
+  # ---- loss weights (tune on validation years only)
+  alpha_v: 1.0              # weight of the volatility CRPS next to the return CRPS
+  w_mkt: 0.1                # market-index head
+  w_trend: 0.1              # trend cross-check head (cross-entropy)
+  w_cons: 0.0               # market-consistency penalty (head vs member aggregate); off until tuned
+  # ---- data
+  universe: member500       # member500 (default) or member1000 (wider-training ablation, 02 §5)
+  edges: [tree, corr, glob] # fabric ablation switch (P3.5): any subset; [] = flat model
+  max_nodes: null           # subsample stocks per date (smoke tests only)
+  workers: 2                # DataLoader worker processes (0 = load in the main process)
+  # ---- evaluation / bookkeeping
+  eval_every: 1000          # steps between validation passes
+  eval_dates: 48            # validation decision dates per pass (evenly spaced over the validation year)
+  eval_samples: 8           # noise scenarios per date at validation
+  patience: 5               # early stopping: evaluations without improvement
+  log_every: 50
+  ckpt_every: 500
+  mlflow: false             # mirror metrics to ./mlruns if MLflow is installed
+  allow_before_g2: false    # 00 rule 8: neural training is blocked until gate G2 is signed off

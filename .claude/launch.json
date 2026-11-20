@@ -1,0 +1,11 @@
+﻿{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "marketcast-dashboard",
+      "runtimeExecutable": "C:\\Users\\PC\\.conda\\envs\\marketcast-data\\python.exe",
+      "runtimeArgs": ["-c", "import sys; sys.path.insert(0, r'C:\\Users\\PC\\OneDrive\\Desktop\\Market Cast\\src'); from marketcast.app.server import main; main(8765, False)"],
+      "port": 8765
+    }
+  ]
+}

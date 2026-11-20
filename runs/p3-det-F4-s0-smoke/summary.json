@@ -1,0 +1,15 @@
+{
+  "run_id": "p3-det-F4-s0-smoke@8ddc0ff21e05",
+  "run_name": "p3-det-F4-s0-smoke",
+  "config_hash": "8ddc0ff21e053095db7b1487fa6d448033bd84ae70e9381d0d97e9c9de29e442",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:40d440607f20e2ab37a856b888641d0c5c24027fc1532b6e341568b6f21cdd34",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": true,
+  "status": "finished",
+  "best_val_metric": 0.25110538055499393,
+  "steps": 3,
+  "minutes": 0.0,
+  "params": 101787
+}

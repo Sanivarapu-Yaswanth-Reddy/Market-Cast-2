@@ -1,0 +1,30 @@
+# Data PC (CPU only): downloads, panel build, PIT store, baselines, tests.
+# Create:  conda env create -f environment-data.yml     Activate: conda activate marketcast-data
+name: marketcast-data
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pyarrow
+  - duckdb
+  - python-duckdb
+  - scipy
+  - statsmodels
+  - arch-py
+  - lightgbm
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - matplotlib
+  - pytest
+  - hypothesis
+  - rich
+  - ruff
+  - black
+  - pip
+  - pip:
+      - scoringrules
+      - properscoring
+      - mlflow
+      - imdlib        # optional: IMD rainfall (--with-imd)

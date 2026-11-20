@@ -1,0 +1,17 @@
+{
+  "run_id": "B2-F4-val@dbb8e1ddc7a1",
+  "run_name": "B2-F4-val",
+  "config_hash": "dbb8e1ddc7a1b52cf880f454ed4ecb1245a8bc3023269e91c170d3ae47291ba4",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:fe208cfdb148bb500cc888903b3cc251d74cbfc52dde1625cbd6cc32634a117b",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": false,
+  "config": {
+    "baseline": "B2",
+    "paths": 64,
+    "every": 100,
+    "split": "val",
+    "phase": "P2"
+  }
+}

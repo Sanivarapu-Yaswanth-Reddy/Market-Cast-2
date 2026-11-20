@@ -1,0 +1,63 @@
+{
+  "run_id": "p4-unroll5-F4-s0-smoke@3def5a7ca003",
+  "run_name": "p4-unroll5-F4-s0-smoke",
+  "config_hash": "3def5a7ca003d90c073da3765bf6ee557e130e387490db9925572b13ec7cfda5",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:40d440607f20e2ab37a856b888641d0c5c24027fc1532b6e341568b6f21cdd34",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": true,
+  "config": {
+    "train": {
+      "max_steps": 3,
+      "dates_per_step": 1,
+      "n_samples": 2,
+      "lr": 3e-05,
+      "lr_min": 3e-07,
+      "warmup_steps": 1,
+      "weight_decay": 0.05,
+      "grad_clip": 1.0,
+      "ema": 0.999,
+      "amp": false,
+      "k_steps": 5,
+      "init_from": null,
+      "alpha_v": 1.0,
+      "w_mkt": 0.1,
+      "w_trend": 0.1,
+      "w_cons": 0.0,
+      "universe": "member500",
+      "edges": [
+        "tree",
+        "corr",
+        "glob"
+      ],
+      "max_nodes": 48,
+      "workers": 0,
+      "eval_every": 3,
+      "eval_dates": 2,
+      "eval_samples": 4,
+      "patience": 5,
+      "log_every": 1,
+      "ckpt_every": 3,
+      "mlflow": false,
+      "allow_before_g2": false
+    },
+    "name": "p4-unroll5",
+    "phase": "P4",
+    "model": {
+      "mode": "gen",
+      "d": 32,
+      "d_e": 32,
+      "enc_layers": 1,
+      "enc_heads": 2,
+      "enc_ff": 64,
+      "proc_layers": 2,
+      "proc_heads": 4,
+      "proc_ff": 64,
+      "dropout": 0.1,
+      "noise_dim": 16,
+      "cond_dim": 32,
+      "grad_checkpoint": true
+    }
+  }
+}

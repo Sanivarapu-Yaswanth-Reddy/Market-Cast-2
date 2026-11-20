@@ -1,0 +1,39 @@
+# Dated market events used by the trading calendar (P1.1), masks (P1.9), forcings (03 §9) and slices (05 §8).
+#
+# STATUS: every list below was written from memory on 2026-11-16 and is UNVERIFIED (08 §4). A date that is not
+# an NSE session in the data is ignored by the calendar builder and reported in its log, which catches typos
+# but not wrong-but-valid dates. Verify each list against exchange circulars before a gate uses it, then set
+# `verified: true` for that list.
+verified: false
+
+# Sessions that are not normal full-day sessions. `special` = Muhurat / weekend budget / other short sessions.
+# Weekend sessions and abnormally thin sessions are ALSO detected from the data (see calendar.py), so this
+# list only needs entries the detector would miss.
+special_sessions: [2015-02-28, 2020-02-01, 2025-02-01]
+outage_sessions: [2021-02-24]            # NSE trading halt 11:40-15:45, extended session
+partial_sessions: []
+
+# Market-wide circuit-breaker days: every stock's target is censored that day (03 §5).
+market_halts: [2008-01-22, 2008-10-24, 2009-05-18, 2020-03-13, 2020-03-23]
+
+# Union budget days (full and interim). Weekend ones appear above as special sessions too.
+budget_days: [2008-02-29, 2009-02-16, 2009-07-06, 2010-02-26, 2011-02-28, 2012-03-16, 2013-02-28, 2014-02-17,
+              2014-07-10, 2015-02-28, 2016-02-29, 2017-02-01, 2018-02-01, 2019-02-01, 2019-07-05, 2020-02-01,
+              2021-02-01, 2022-02-01, 2023-02-01, 2024-02-01, 2024-07-23, 2025-02-01, 2026-02-01]
+
+# General-election counting days (or the first session after, when counting fell on a non-session).
+election_result_days: [2009-05-18, 2014-05-16, 2019-05-23, 2024-06-04]
+
+# RBI moves announced OUTSIDE the pre-announced MPC calendar. They are events, never forcings (03 §9):
+# the calendar flags them `rbi_unscheduled` and excludes them from `is_rbi_policy_day`.
+rbi_unscheduled: [2008-10-20, 2008-11-01, 2008-12-06, 2009-01-02, 2009-03-04, 2020-03-27, 2020-05-22, 2022-05-04]
+
+# Market-structure rule changes: before/after slices (05 §8) and step forcings.
+rule_changes:
+  t_plus_1_complete: 2023-01-27
+  sebi_fo_curbs_start: 2024-11-20
+  udiff_format: 2024-07-08
+
+# Thin-session detector: a session whose total turnover is below this share of the trailing 20-session
+# median is marked `special` (catches Muhurat sessions without a hand-kept Diwali list).
+thin_session_ratio: 0.35

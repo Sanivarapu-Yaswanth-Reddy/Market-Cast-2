@@ -1,0 +1,33 @@
+# GPU training machine (NVIDIA RTX 50-series / Blackwell needs CUDA 12.8+ wheels, so the torch line uses cu128).
+# Create:  conda env create -f environment-gpu.yml     Activate: conda activate marketcast-gpu
+# Then run CHECK_ENV.bat and confirm "matmul on GPU: OK". If it reports no kernels for sm_120, see 09_ENVIRONMENT_SETUP.md.
+name: marketcast-gpu
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pyarrow
+  - duckdb
+  - python-duckdb
+  - scipy
+  - statsmodels
+  - arch-py
+  - lightgbm
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - matplotlib
+  - pytest
+  - hypothesis
+  - rich
+  - ruff
+  - black
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch
+      - torch-geometric      # PyG 2.3+ installs from PyPI alone; optional wheels (pyg-lib, torch-scatter, torch-sparse) only for speed
+      - scoringrules
+      - properscoring
+      - mlflow

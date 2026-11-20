@@ -1,0 +1,24 @@
+# Curated global -> sector exposure edges of the sector fabric (04 §L4, edge type `global`).
+# Every global node is also connected to the MARKET node automatically; this file adds the sector-specific links.
+# Sector names must match data/pit/ref_sector_map.parquet (the 22 NSE sector labels). Unknown names are
+# reported and ignored by graph/fabric.py.
+#
+# STATUS: first draft from general knowledge, UNREVIEWED. The P3.5 ablation decides whether these edges
+# stay; the direction of the effect is learned, the file only says "a channel may exist".
+reviewed: false
+exposures:
+  OIL:        [Oil Gas & Consumable Fuels, Chemicals, Consumer Durables, Services, Automobile and Auto Components]   # paints (durables), aviation/logistics (services)
+  USDINR:     [Information Technology, Healthcare, Textiles, Oil Gas & Consumable Fuels, Metals & Mining]
+  US_EQ:      [Information Technology, Healthcare]
+  ASIA_EQ:    [Metals & Mining, Automobile and Auto Components]
+  US_RATES:   [Financial Services, Realty, Information Technology]
+  USD:        [Information Technology, Metals & Mining]
+  GLOBAL_VOL: [Financial Services, Metals & Mining]
+  CREDIT:     [Financial Services, Realty, Construction]
+  INDIA_RATES: [Financial Services, Realty, Automobile and Auto Components, Construction, Power]
+  INDIA_MACRO: [Fast Moving Consumer Goods, Capital Goods, Construction Materials, Consumer Durables]
+  FLOWS:      [Financial Services, Information Technology]
+  METALS:     [Metals & Mining, Capital Goods, Automobile and Auto Components, Construction Materials]
+  AGRI:       [Fast Moving Consumer Goods, Chemicals, Textiles, Automobile and Auto Components]             # fertilisers (chemicals), tractors (auto)
+  VIX_IN:     [Financial Services]
+  POLICY_UNC: [Financial Services, Capital Goods]

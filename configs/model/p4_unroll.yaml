@@ -1,0 +1,31 @@
+# Phase 4, stage S3: unrolled fine-tuning through the autoregressive rollout (04 §L8).
+# Run twice: first k_steps = 5, then k_steps = 10, each warm-started from the previous best checkpoint:
+#   python -m marketcast train --config model/p4_unroll.yaml --fold F4 --seed 0 --set train.init_from=runs/p4-gen-F4-s0/ckpt_best.pt
+#   python -m marketcast train --config model/p4_unroll.yaml --fold F4 --seed 0 --set train.k_steps=10 --set name=p4-unroll10 --set train.init_from=runs/p4-unroll5-F4-s0/ckpt_best.pt
+# Memory grows with k (the encoder runs once per scenario per step): gradient checkpointing is on, and one date
+# per optimiser step is used with the lower learning rate the plan asks for (x0.1).
+name: p4-unroll5
+phase: P4
+model:
+  mode: gen
+  d: 256
+  d_e: 128
+  enc_layers: 4
+  enc_heads: 4
+  enc_ff: 512
+  proc_layers: 8
+  proc_heads: 8
+  proc_ff: 1024
+  dropout: 0.1
+  noise_dim: 16
+  cond_dim: 128
+  grad_checkpoint: true
+train:
+  k_steps: 5
+  n_samples: 2
+  dates_per_step: 1
+  lr: 3.0e-5
+  lr_min: 3.0e-7
+  warmup_steps: 200
+  max_steps: 8000
+  eval_every: 500

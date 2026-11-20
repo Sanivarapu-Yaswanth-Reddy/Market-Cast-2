@@ -1,0 +1,9 @@
+# Companies the STRATIFIED held-out rule may never pick (05 §3, decision D-27).
+# Why: the plan keeps mega-caps out of the named 20 so that holding names out does not distort the market
+# aggregate that training features use. The sha256-ordered stratified top-up had no such guard and picked
+# Infosys. A key listed here is skipped and the next company in its bucket's sha order takes the slot, so the
+# held-out share stays at ~15%.
+# Owner decision 2026-11-16: exclude Infosys. Add a key here only with the owner's approval; after any change
+# re-run:  folds make -> targets build -> graph build -> features build
+never_hold_out:
+  INE009A01: "Infosys Ltd: top Nifty 50 weight (owner decision 2026-11-16)"

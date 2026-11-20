@@ -1,0 +1,22 @@
+{
+  "run_id": "B0-F5-test@50ab348fd8e7",
+  "run_name": "B0-F5-test",
+  "config_hash": "50ab348fd8e7fd4b1f78926a9453471dd82ea6802b1b847438eabbe632871ac4",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F5",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 248,
+  "minutes": 2.55,
+  "crps_h1": 0.5531200394007595,
+  "crps_h5": 0.5785027058733333,
+  "crps_h20": 0.5888008365744395,
+  "qlike_h1": 0.4600862294428076,
+  "qlike_h5": 0.2759046577288831,
+  "qlike_h20": 0.19977788461526613,
+  "in90_h1": 0.8878187759659754,
+  "in90_h5": 0.890638624845675,
+  "in90_h20": 0.8901301640046072
+}

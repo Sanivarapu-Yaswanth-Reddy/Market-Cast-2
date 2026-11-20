@@ -1,0 +1,24 @@
+# Phase 4, stage S1: generative model, single-step fair CRPS on z and v with 2 noise samples per date.
+#   python -m marketcast train --config model/p4_gen.yaml --fold F4 --seed 0
+# Warm-start the encoder/processor from the best Phase 3 run by adding, for example:
+#   --set train.init_from=runs/p3-det-F4-s0/ckpt_best.pt
+# Epistemic uncertainty = 4 independently trained seeds (0..3); a 64-path forecast is 4 seeds x 16 noise draws.
+name: p4-gen
+phase: P4
+model:
+  mode: gen
+  d: 256
+  d_e: 128
+  enc_layers: 4
+  enc_heads: 4
+  enc_ff: 512
+  proc_layers: 8
+  proc_heads: 8
+  proc_ff: 1024
+  dropout: 0.1
+  noise_dim: 16
+  cond_dim: 128
+  grad_checkpoint: false
+train:
+  n_samples: 2
+  max_steps: 40000

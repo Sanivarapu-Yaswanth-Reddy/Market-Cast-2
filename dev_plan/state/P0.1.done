@@ -1,0 +1,6 @@
+{
+  "id": "P0.1",
+  "done_at": "2026-11-16T07:58:32+00:00",
+  "note": "All acceptance checks pass (from manifest, 2026-11-16); re-run python -m marketcast data inventory on the PC to confirm from disk",
+  "forced": false
+}

@@ -1,0 +1,21 @@
+# Phase 3: deterministic volatility model (04 §L7 "Phase 3 deterministic variant").
+# Same network as the generative model, no noise; heads predict the log variance of the 1-, 5- and 20-day
+# realized variance; loss = RV2 / exp(s) + s (QLIKE-consistent).
+#   python -m marketcast train --config model/p3_det.yaml --fold F4 --seed 0
+name: p3-det
+phase: P3
+model:
+  mode: det
+  d: 256               # 8 GB VRAM fallback if a 10-step run peaks above ~7 GB: d: 192 (06 P0.2)
+  d_e: 128
+  enc_layers: 4
+  enc_heads: 4
+  enc_ff: 512
+  proc_layers: 8
+  proc_heads: 8
+  proc_ff: 1024
+  dropout: 0.1
+  grad_checkpoint: false   # true = recompute processor activations in backward (less memory, ~30% slower)
+train:
+  n_samples: 1             # deterministic: one pass per date
+  max_steps: 30000

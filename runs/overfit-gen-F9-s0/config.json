@@ -1,0 +1,63 @@
+{
+  "run_id": "overfit-gen-F9-s0@cef53b291b5e",
+  "run_name": "overfit-gen-F9-s0",
+  "config_hash": "cef53b291b5e3fffe69bc05589affbcfa240a2d1bd8444b6ca6cf12e31dda7f6",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:c846188cf1998e18e0465e9be3cf14b5a7c0600496c4d56219a8d6b0e4c62470",
+  "fold": "F9",
+  "seed": 0,
+  "smoke": false,
+  "config": {
+    "train": {
+      "max_steps": 240,
+      "dates_per_step": 1,
+      "n_samples": 2,
+      "lr": 0.0005,
+      "lr_min": 1.5e-06,
+      "warmup_steps": 20,
+      "weight_decay": 0.05,
+      "grad_clip": 1.0,
+      "ema": 0.999,
+      "amp": false,
+      "k_steps": 1,
+      "init_from": null,
+      "alpha_v": 1.0,
+      "w_mkt": 0,
+      "w_trend": 0,
+      "w_cons": 0.0,
+      "universe": "member500",
+      "edges": [
+        "tree",
+        "corr",
+        "glob"
+      ],
+      "max_nodes": 120,
+      "workers": 0,
+      "eval_every": 60,
+      "eval_dates": 24,
+      "eval_samples": 8,
+      "patience": 6,
+      "log_every": 20,
+      "ckpt_every": 100,
+      "mlflow": false,
+      "allow_before_g2": true,
+      "overfit_dates": 8
+    },
+    "name": "overfit-gen",
+    "phase": "P4-cpu",
+    "model": {
+      "mode": "gen",
+      "d": 96,
+      "d_e": 64,
+      "enc_layers": 2,
+      "enc_heads": 4,
+      "enc_ff": 128,
+      "proc_layers": 3,
+      "proc_heads": 4,
+      "proc_ff": 256,
+      "cond_dim": 64,
+      "noise_dim": 16,
+      "dropout": 0
+    }
+  }
+}

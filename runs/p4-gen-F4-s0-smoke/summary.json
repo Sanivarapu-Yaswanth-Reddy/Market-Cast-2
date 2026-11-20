@@ -1,0 +1,15 @@
+{
+  "run_id": "p4-gen-F4-s0-smoke@407651d21ee8",
+  "run_name": "p4-gen-F4-s0-smoke",
+  "config_hash": "407651d21ee8dcabc9c0f5543734538580eceb60e492ac49a579156100f7d2fe",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:500b115f9bc45fc2070569fa31f51a563c42bcde0bb53feef69873f7f9c31f7c",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": true,
+  "status": "finished",
+  "best_val_metric": 0.9982738196849823,
+  "steps": 3,
+  "minutes": 0.0,
+  "params": 103899
+}

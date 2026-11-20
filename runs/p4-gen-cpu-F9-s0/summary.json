@@ -1,0 +1,1 @@
+{"run_name": "p4-gen-cpu-F9-s0", "status": "stopped: diverged (superseded by p4-gen-cpu2)", "best_val_metric": 0.89178, "note": "lr 5e-4 with 1 date per step; loss rose after step 250. Stopped by hand at step ~700; a mistaken 100-step relaunch with the same settings was also stopped. ckpt_best.pt is from step 250."}

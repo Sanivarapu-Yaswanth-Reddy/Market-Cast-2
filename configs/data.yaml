@@ -1,0 +1,19 @@
+# Paths are relative to the project root. See dev_plan/02_DATA_CONTRACT.md.
+raw_dir: data/raw
+processed_dir: data/processed
+pit_dir: data/pit
+equity_series: [EQ, BE, BZ]
+start_dates:
+  cash: 2005-01-03
+  delivery: 2005-01-03
+  fo: 2010-01-04
+  indices: 2012-07-02
+udiff_switch: 2024-07-08          # NSE bhavcopy format change (cash and F&O)
+cutoff_ist: "15:30"               # PIT cut-off; end-of-day NSE files count for date t
+corporate_actions:
+  source: inferred                # NSE PREVCLOSE is NOT split/bonus adjusted (decision D-22)
+  min_price: 5                    # no inference below this price (tick noise)
+  max_gap_days: 10                # no inference across longer gaps
+  open_jump: 1.22                 # |ln(open/prev)| threshold for a candidate
+  unexplained_jump: 1.40          # flag moves beyond this with no standard ratio
+company_id_rule: "ISIN[:9] for INE shares whose ISINs replace each other in time; full ISIN otherwise (funds INF..., side-by-side share classes)"

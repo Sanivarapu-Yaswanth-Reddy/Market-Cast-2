@@ -1,0 +1,64 @@
+# Old NSE index name -> current name (P1.1). Detected from level continuity by marketcast.data.calendar.build_index_aliases;
+# seeded (not detected) entries: []. Re-generated on every `data calendar` run; edit SEED_ALIASES in code, not this file.
+aliases:
+  CNX 100: Nifty 100
+  CNX 100 Equal Weight: Nifty100 Equal Weight
+  CNX 200: Nifty 200
+  CNX 500: Nifty 500
+  CNX 500 Shariah: Nifty500 Shariah
+  CNX Alpha Index: Nifty Alpha 50
+  CNX Auto: Nifty Auto
+  CNX Bank: Nifty Bank
+  CNX Commodities: Nifty Commodities
+  CNX Consumption: Nifty India Consumption
+  CNX DEFTY: Nifty50 USD
+  CNX Dividend Opportunities: Nifty Dividend Opportunities 50
+  CNX Energy: Nifty Energy
+  CNX FMCG: Nifty FMCG
+  CNX Finance: Nifty Financial Services
+  CNX High Beta: Nifty High Beta 50
+  CNX IT: Nifty IT
+  CNX Infrastructure: Nifty Infrastructure
+  CNX Low Volatility: Nifty Low Volatility 50
+  CNX MNC: Nifty MNC
+  CNX Media: Nifty Media
+  CNX Metal: Nifty Metal
+  CNX Midcap: NIFTY Midcap 100
+  CNX Nifty: Nifty 50
+  CNX Nifty Dividend: Nifty50 Dividend Points
+  CNX Nifty Junior: Nifty Next 50
+  CNX Nifty Shariah: Nifty50 Shariah
+  CNX PSE: Nifty PSE
+  CNX PSU Bank: Nifty PSU Bank
+  CNX Pharma: Nifty Pharma
+  CNX Realty: Nifty Realty
+  CNX Service Sector: Nifty Services Sector
+  CNX Shariah25: Nifty Shariah 25
+  CNX Smallcap: NIFTY Smallcap 100
+  CPSE: Nifty CPSE
+  LIX 15: Nifty100 Liquid 15
+  LIX15 Midcap: Nifty Midcap Liquid 15
+  NI15: Nifty Growth Sectors 15
+  NIFTY Midcap 50: Nifty Midcap 50
+  NIFTY PR 1X Inverse: Nifty50 PR 1x Inverse
+  NIFTY PR 2x Leverage: Nifty50 PR 2x Leverage
+  NIFTY TR 1X Inverse: Nifty50 TR 1x Inverse
+  NIFTY TR 2X Leverage: Nifty50 TR 2x Leverage
+  NSE GSECBM Clean Price Index: Nifty 10 yr Benchmark G-Sec (Clean Price)
+  NSE Quality 30: NIFTY100 Quality 30
+  NV 20: Nifty50 Value 20
+  Nifty Aditya Birla Group: Nifty India Corporate Group Index - Aditya Birla Group
+  Nifty Free Float Midcap 100: NIFTY Midcap 100
+  Nifty Free Float Smallcap 100: NIFTY Smallcap 100
+  Nifty India Internet & E-Commerce: Nifty India Internet
+  Nifty Mahindra Group: Nifty India Corporate Group Index - Mahindra Group
+  Nifty Midcap 100: NIFTY Midcap 100
+  Nifty Quality 30: NIFTY100 Quality 30
+  Nifty Smallcap 100: NIFTY Smallcap 100
+  Nifty Tata Group: Nifty India Corporate Group Index - Tata Group
+  Nifty Tata Group 25% Cap: Nifty India Corporate Group Index - Tata Group 25% Cap
+  S&P CNX 500: Nifty 500
+  S&P CNX 500 Shariah: Nifty500 Shariah
+  S&P CNX Nifty: Nifty 50
+  S&P CNX Nifty Dividend: Nifty50 Dividend Points
+  S&P CNX Nifty Shariah: Nifty50 Shariah

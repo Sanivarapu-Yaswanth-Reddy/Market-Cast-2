@@ -1,0 +1,38 @@
+# REDUCED generative model for a CPU-only machine (owner decision 2026-11-16: "small CPU run here now").
+# Purpose: prove the whole chain with a real trained checkpoint and feed the dashboard. It is NOT the model the
+# gates are judged on: that is configs/model/p4_gen.yaml on the GPU machine. About 1 M parameters instead of 17 M.
+#   python -m marketcast train --config model/p4_gen_cpu.yaml --fold F9 --seed 0 --set train.allow_before_g2=true
+#
+# HISTORY: the first attempt (run p4-gen-cpu-F9-s0: lr 5e-4, 1 date per step) improved until step 250
+# (validation 0.944 -> 0.892) and then diverged (training loss 1.18 -> 1.68 by step 700, gradient norms 10+).
+# This version, run name p4-gen-cpu2, uses a 3x lower learning rate, a longer warm-up and 2 dates per step.
+name: p4-gen-cpu2
+phase: P4-cpu
+model:
+  mode: gen
+  d: 96
+  d_e: 64
+  enc_layers: 2
+  enc_heads: 4
+  enc_ff: 128
+  proc_layers: 3
+  proc_heads: 4
+  proc_ff: 256
+  cond_dim: 64
+  noise_dim: 16
+  dropout: 0.1
+train:
+  n_samples: 2
+  dates_per_step: 2
+  max_steps: 2000
+  warmup_steps: 300
+  lr: 1.5e-4
+  lr_min: 1.5e-6
+  eval_every: 200
+  eval_dates: 24
+  eval_samples: 8
+  patience: 6
+  workers: 0
+  log_every: 25
+  ckpt_every: 100
+  amp: false

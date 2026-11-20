@@ -1,0 +1,15 @@
+{
+  "run_id": "overfit-gen-F9-s0@cef53b291b5e",
+  "run_name": "overfit-gen-F9-s0",
+  "config_hash": "cef53b291b5e3fffe69bc05589affbcfa240a2d1bd8444b6ca6cf12e31dda7f6",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:c846188cf1998e18e0465e9be3cf14b5a7c0600496c4d56219a8d6b0e4c62470",
+  "fold": "F9",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "best_val_metric": 0.6880775447934866,
+  "steps": 240,
+  "minutes": 5.8,
+  "params": 1005268
+}

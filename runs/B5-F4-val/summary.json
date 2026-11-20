@@ -1,0 +1,22 @@
+{
+  "run_id": "B5-F4-val@d6afd9fc01a0",
+  "run_name": "B5-F4-val",
+  "config_hash": "d6afd9fc01a0b9e921f14721386c3d2cedbb08c69e7daf5bb49145c786de75ea",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:fe208cfdb148bb500cc888903b3cc251d74cbfc52dde1625cbd6cc32634a117b",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 2,
+  "minutes": 2.83,
+  "crps_h1": 0.43865226131785323,
+  "crps_h5": 0.47181685060887746,
+  "crps_h20": 0.5684426336965186,
+  "qlike_h1": 0.32788266406023325,
+  "qlike_h5": 0.19318546443751658,
+  "qlike_h20": 0.24485165360971484,
+  "in90_h1": 0.8944723618090452,
+  "in90_h5": 0.9129554655870445,
+  "in90_h20": 0.9084287200832466
+}

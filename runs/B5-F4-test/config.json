@@ -1,0 +1,17 @@
+{
+  "run_id": "B5-F4-test@7e7e731c19c5",
+  "run_name": "B5-F4-test",
+  "config_hash": "7e7e731c19c52ce362d7d72cf73ec770fa9b54ea9b18e324a9742bd19a64ea15",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": false,
+  "config": {
+    "baseline": "B5",
+    "paths": 256,
+    "every": 5,
+    "split": "test",
+    "phase": "P2"
+  }
+}

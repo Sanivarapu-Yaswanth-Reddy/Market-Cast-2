@@ -1,0 +1,43 @@
+# Publication rules that turn a series' valid_date into its available_at (02 §2). Used by
+# marketcast.data.global_align and unit-tested in tests/test_pit.py. Times are IST.
+#
+# rule = next_day   : value dated (US/calendar) day d is public at d+1 06:00 IST (decision D-16)
+# rule = month_lag  : value for month m is public `lag_days` after the last day of m, at 09:00 IST
+# rule = year_lag   : value for year y is public `lag_days` after 31 Dec y, at 09:00 IST
+# rule = same_day   : public at d `time` IST (used for RBI announcements)
+#
+# The monthly lags are CONSERVATIVE guesses, not release calendars (decision D-15, gap G9). FRED also serves
+# latest-revised values, so revisable series (IIP, trade, GDP) still carry revision look-ahead until ALFRED
+# vintages are ingested. `max_stale_days` = after this many calendar days without a newer value the as-of
+# value is treated as missing (06 P1.8: "no forward fill beyond 10 sessions for daily series").
+defaults:
+  daily:   {rule: next_day, max_stale_days: 15}
+  monthly: {rule: month_lag, lag_days: 30, max_stale_days: 120}
+
+series:
+  # ---- India monthly macro (FRED / OECD MEI)
+  INDCPIALLMINMEI:  {rule: month_lag, lag_days: 15, max_stale_days: 120}   # CPI
+  INDPROINDMISMEI:  {rule: month_lag, lag_days: 45, max_stale_days: 150}   # IIP (revisable)
+  XTEXVA01INM667S:  {rule: month_lag, lag_days: 20, max_stale_days: 120}   # exports
+  XTIMVA01INM667S:  {rule: month_lag, lag_days: 20, max_stale_days: 120}   # imports
+  MABMM301INM189S:  {rule: month_lag, lag_days: 15, max_stale_days: 120}   # M3
+  IRSTCI01INM156N:  {rule: month_lag, lag_days: 5,  max_stale_days: 120}   # call money rate, monthly average
+  INDIRLTLT01STM:   {rule: month_lag, lag_days: 5,  max_stale_days: 120}   # India 10y yield, monthly
+  TRESEGINM052N:    {rule: month_lag, lag_days: 10, max_stale_days: 120}   # FX reserves
+  INDEPUINDXM:      {rule: month_lag, lag_days: 10, max_stale_days: 120}   # India policy uncertainty
+  CCUSMA02INM618N:  {rule: month_lag, lag_days: 5,  max_stale_days: 120}   # USD/INR monthly average
+  MKTGDPINA646NWDB: {rule: year_lag,  lag_days: 180, max_stale_days: 800}  # GDP, annual (World Bank)
+  # ---- IMF primary commodity prices (monthly averages)
+  PCOPPUSDM:    {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PALUMUSDM:    {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PIORECRUSDM:  {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PCOALAUUSDM:  {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PNGASEUUSDM:  {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PWHEAMTUSDM:  {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PRICENPQUSDM: {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PSUGAISAUSDM: {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PCOTTINDUSDM: {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  PRUBBUSDM:    {rule: month_lag, lag_days: 35, max_stale_days: 120}
+  # ---- non-FRED sources
+  FPI_EQUITY_NET: {rule: month_lag, lag_days: 1, max_stale_days: 75}       # NSDL monthly FPI equity, Rs crore
+  RBI_REPO:       {rule: same_day, time: "12:00", max_stale_days: 100000}  # a policy rate holds until changed

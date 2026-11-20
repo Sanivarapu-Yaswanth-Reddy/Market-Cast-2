@@ -1,0 +1,22 @@
+{
+  "run_id": "B0-F7-test@50ab348fd8e7",
+  "run_name": "B0-F7-test",
+  "config_hash": "50ab348fd8e7fd4b1f78926a9453471dd82ea6802b1b847438eabbe632871ac4",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F7",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 245,
+  "minutes": 2.56,
+  "crps_h1": 0.5566141024414847,
+  "crps_h5": 0.5934185700403765,
+  "crps_h20": 0.6409333300462171,
+  "qlike_h1": 0.48035573063181775,
+  "qlike_h5": 0.29589405675465336,
+  "qlike_h20": 0.19683408849907538,
+  "in90_h1": 0.885360275122176,
+  "in90_h5": 0.882055658196701,
+  "in90_h20": 0.8660528086108308
+}

@@ -1,0 +1,17 @@
+{
+  "run_id": "B0-F2-test@50ab348fd8e7",
+  "run_name": "B0-F2-test",
+  "config_hash": "50ab348fd8e7fd4b1f78926a9453471dd82ea6802b1b847438eabbe632871ac4",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F2",
+  "seed": 0,
+  "smoke": false,
+  "config": {
+    "baseline": "B0",
+    "paths": 256,
+    "every": 1,
+    "split": "test",
+    "phase": "P2"
+  }
+}

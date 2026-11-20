@@ -1,0 +1,35 @@
+tag_id,scenario,start,end,label,notes,verified
+S01,global_risk_off,2008-01-21,2008-01-22,Global sell-off January 2008,Sensex and Nifty heavy falls on 21-22 Jan 2008,false
+S02,global_risk_off,2008-09-15,2008-11-28,Lehman collapse and GFC panic,Lehman filing 15 Sep 2008; window end approximate,false
+S03,governance_shock,2009-01-07,2009-01-30,Satyam confession,Ramalinga Raju letter 7 Jan 2009; IT sector and group contagion,false
+S04,election_outcome,2009-05-18,2009-05-22,General election result 2009,Market-wide upper circuit and halt on 18 May 2009,false
+S05,currency_shock,2013-05-22,2013-09-04,Taper tantrum,Bernanke testimony 22 May 2013; INR record low late Aug 2013,false
+S06,election_outcome,2014-05-16,2014-05-20,General election result 2014,,false
+S07,global_risk_off,2015-08-11,2015-08-31,China devaluation and 24 Aug 2015 crash,Yuan devaluation 11 Aug 2015,false
+S08,global_risk_off,2016-06-24,2016-06-28,Brexit referendum result,,false
+S09,demand_policy_shock,2016-11-09,2016-12-30,Demonetisation,Announced evening of 8 Nov 2016 (after close); also US election result 9 Nov,false
+S10,fiscal_tax_shock,2018-02-01,2018-02-09,Budget 2018 LTCG reintroduction plus global vol spike,,false
+S11,credit_crunch,2018-09-21,2018-10-31,IL&FS default and NBFC funding crunch,DHFL crash day 21 Sep 2018,false
+S12,election_outcome,2019-05-23,2019-05-27,General election result 2019,,false
+S13,fiscal_tax_shock,2019-09-20,2019-09-24,Corporate tax cut (positive shock),,false
+S14,credit_crunch,2020-03-05,2020-03-20,Yes Bank moratorium,RBI moratorium 5 Mar 2020; overlaps COVID crash,false
+S15,global_risk_off,2020-02-24,2020-04-30,COVID crash,Market-wide halts 13 Mar 2020 and 23 Mar 2020,false
+S16,rbi_policy_surprise,2020-03-27,2020-03-27,Unscheduled RBI cut,Off-cycle MPC decision,false
+S17,rbi_policy_surprise,2020-05-22,2020-05-22,Unscheduled RBI cut,Off-cycle MPC decision,false
+S18,exchange_outage,2021-02-24,2021-02-24,NSE trading outage,Session quality = outage,false
+S19,commodity_shock,2022-02-24,2022-03-15,Russia invades Ukraine,Crude and metals spike,false
+S20,rbi_policy_surprise,2022-05-04,2022-05-06,Unscheduled RBI hike,Off-cycle 40 bp hike,false
+S21,governance_shock,2023-01-25,2023-02-28,Hindenburg report on Adani group,Report published 24 Jan 2023 (US); group-wide contagion,false
+S22,structure_change,2023-01-27,2023-01-27,T+1 settlement fully live,Rule-change date (forcing and before/after slice),false
+S23,merger,2023-07-01,2023-07-31,HDFC Ltd merger into HDFC Bank,Node lifecycle window; verify last trading date of HDFC Ltd,false
+S24,demerger,2023-07-20,2023-08-31,Jio Financial demerger from Reliance,Special pre-open session; listing 21 Aug 2023,false
+S25,smallcap_unwind,2024-02-15,2024-03-31,Small-cap froth warnings and sell-off,Regulator and AMFI stress-test disclosures,false
+S26,election_outcome,2024-06-04,2024-06-07,General election result 2024,Large gap down then fast partial reversal,false
+S27,fiscal_tax_shock,2024-07-23,2024-07-26,Budget 2024 STT and capital-gains changes,,false
+S28,global_risk_off,2024-08-05,2024-08-07,Yen carry-trade unwind,,false
+S29,regulatory_shock,2024-10-01,2024-11-29,SEBI F&O curbs (circular and phased start),Brokers and exchanges repricing; measures phased from 20 Nov 2024,false
+S30,global_risk_off,2025-04-02,2025-04-15,US tariff announcements and global sell-off,Indian market reaction strongest 7 Apr 2025,false
+S31,geopolitical_shock,2025-05-07,2025-05-13,India-Pakistan military escalation and ceasefire,Verify dates,false
+S32,monsoon_failure,2009-06-01,2009-09-30,Deficient monsoon 2009,Severe drought year,false
+S33,monsoon_failure,2014-06-01,2014-09-30,Deficient monsoon 2014,,false
+S34,monsoon_failure,2015-06-01,2015-09-30,Deficient monsoon 2015,,false

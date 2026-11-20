@@ -1,0 +1,22 @@
+{
+  "run_id": "B1-F9-test@4c863c865af6",
+  "run_name": "B1-F9-test",
+  "config_hash": "4c863c865af6266dcf007f2acb1d6080496d647f3366253979e1321cf9258248",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F9",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 228,
+  "minutes": 1.78,
+  "crps_h1": 0.557945462665957,
+  "crps_h5": 0.5869321949563264,
+  "crps_h20": 0.5769369138837263,
+  "qlike_h1": 0.46779640911509496,
+  "qlike_h5": 0.27509424684787254,
+  "qlike_h20": 0.18237524573177682,
+  "in90_h1": 0.8901923979352416,
+  "in90_h5": 0.8935544481659995,
+  "in90_h20": 0.9016741961201169
+}

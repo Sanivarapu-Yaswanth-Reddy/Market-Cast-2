@@ -1,0 +1,17 @@
+# data and large artefacts never go to git
+data/
+mlruns/
+models_cache/
+*.parquet
+*.duckdb
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+# local reports that may contain environment details stay, the rest are committed
+
+# run artefacts: checkpoints are large; the registry and metrics ARE committed (they count trials)
+runs/*/ckpt_*.pt
+logs/
+data/processed/_stage/

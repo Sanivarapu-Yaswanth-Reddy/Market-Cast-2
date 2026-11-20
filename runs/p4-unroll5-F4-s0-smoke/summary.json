@@ -1,0 +1,15 @@
+{
+  "run_id": "p4-unroll5-F4-s0-smoke@3def5a7ca003",
+  "run_name": "p4-unroll5-F4-s0-smoke",
+  "config_hash": "3def5a7ca003d90c073da3765bf6ee557e130e387490db9925572b13ec7cfda5",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:40d440607f20e2ab37a856b888641d0c5c24027fc1532b6e341568b6f21cdd34",
+  "fold": "F4",
+  "seed": 0,
+  "smoke": true,
+  "status": "finished",
+  "best_val_metric": 0.999552384018898,
+  "steps": 3,
+  "minutes": 0.1,
+  "params": 103899
+}

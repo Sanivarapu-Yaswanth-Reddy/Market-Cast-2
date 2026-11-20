@@ -1,0 +1,30 @@
+# Default environment for this repo (same as environment-data.yml). GPU machine: environment-gpu.yml.
+# Create: conda env create -f environment.yml
+name: marketcast
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pyarrow
+  - duckdb
+  - python-duckdb
+  - scipy
+  - statsmodels
+  - arch-py
+  - lightgbm
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - matplotlib
+  - pytest
+  - hypothesis
+  - rich
+  - ruff
+  - black
+  - pip
+  - pip:
+      - scoringrules
+      - properscoring
+      - mlflow
+      - imdlib        # optional: IMD rainfall (--with-imd)

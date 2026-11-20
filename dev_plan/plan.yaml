@@ -1,0 +1,62 @@
+# MarketCast task graph. Specs for every task: dev_plan/06_BUILD_PLAN.md.
+# A task is DONE only when dev_plan/state/<id>.done exists (write it with plan_status.py --done).
+# `outputs` are paths relative to the project root; plan_status.py reports which exist.
+version: 1
+phases:
+  P0: {name: Bootstrap, gate: null}
+  P1: {name: Data foundation, gate: G1, weeks: "1-4"}
+  P2: {name: Harness and baselines, gate: G2, weeks: "5-7"}
+  P3: {name: Deterministic volatility model, gate: G3, weeks: "8-11"}
+  P4: {name: Generative core, gate: G4, weeks: "12-16"}
+  P5: {name: Text and event heads, gate: G5, weeks: "17-20"}
+  P6: {name: Live forecasting and product prototype, gate: G6, weeks: "21-26+"}
+
+tasks:
+  - {id: P0.1, phase: P0, name: Verify raw download, deps: [], outputs: [reports/P0_raw_inventory.md]}
+  - {id: P0.2, phase: P0, name: Repo scaffold, deps: [], outputs: [pyproject.toml, environment.yml, src/marketcast/__init__.py, tests, configs, reports/P0_environment.md]}
+  - {id: P0.3, phase: P0, name: Build processed tables (per-year), deps: [P0.1, P0.2], outputs: [data/processed/equity_daily, data/processed/indices_daily.parquet, data/processed/fo_daily, data/processed/fred_global.parquet]}
+
+  - {id: P1.1, phase: P1, name: Trading calendar and index aliases, deps: [P0.3], outputs: [data/pit/ref_trading_calendar.parquet, configs/index_aliases.yaml]}
+  - {id: P1.2, phase: P1, name: Security master and symbol history, deps: [P0.3], outputs: [data/pit/ref_security_master.parquet, data/pit/ref_symbol_history.parquet]}
+  - {id: P1.3, phase: P1, name: Corporate actions and returns, deps: [P1.2], outputs: [data/pit/ref_corporate_actions.parquet, data/processed/equity_returns, reports/P1_corp_action_check.md]}
+  - {id: P1.4, phase: P1, name: PIT store (DuckDB) and lag table, deps: [P1.1, P1.2], outputs: [data/pit/marketcast.duckdb, src/marketcast/pit/store.py, configs/pit_lags.yaml, tests/test_pit.py]}
+  - {id: P1.5, phase: P1, name: Universe MC500 and MC1000, deps: [P1.3, P1.4], outputs: [data/pit/ref_universe.parquet, reports/P1_universe_check.md]}
+  - {id: P1.6, phase: P1, name: Sector map (four-level tree), deps: [P1.2], outputs: [data/pit/ref_sector_map.parquet, reports/P1_sector_coverage.md]}
+  - {id: P1.7, phase: P1, name: Derivatives features, deps: [P0.3, P1.1], outputs: [data/processed/fo_features]}
+  - {id: P1.8, phase: P1, name: Global and macro alignment, deps: [P1.4], outputs: [data/processed/global_daily_pit]}
+  - {id: P1.9, phase: P1, name: "Masks (circuits, stale, sessions, mergers)", deps: [P1.3, P1.7], outputs: [data/processed/masks]}
+  - {id: G1, phase: P1, name: "Gate G1: data foundation", gate: true, deps: [P1.1, P1.2, P1.3, P1.4, P1.5, P1.6, P1.7, P1.8, P1.9], outputs: [reports/G1_gate.md]}
+
+  - {id: P2.1, phase: P2, name: Targets and labels, deps: [G1], outputs: [data/targets]}
+  - {id: P2.2, phase: P2, name: Folds and held-out stocks, deps: [G1], outputs: [configs/folds.yaml, configs/heldout_companies.txt, tests/test_folds.py]}
+  - {id: P2.3, phase: P2, name: Scenario tags (verified), deps: [], outputs: [configs/scenario_tags.csv]}
+  - {id: P2.4, phase: P2, name: Metric library, deps: [P0.2], outputs: [src/marketcast/eval/metrics.py, tests/test_metrics.py]}
+  - {id: P2.5, phase: P2, name: "Baselines B0-B5, BT1-3, BS1-2", deps: [P2.1, P2.2, P2.4], outputs: [src/marketcast/baselines, reports/scores]}
+  - {id: P2.6, phase: P2, name: Leakage suite and baseline scorecard, deps: [P2.3, P2.5], outputs: [tests/test_leakage.py, reports/scorecard_baselines.md]}
+  - {id: G2, phase: P2, name: "Gate G2: harness", gate: true, deps: [P2.6], outputs: [reports/G2_gate.md]}
+
+  - {id: P3.1, phase: P3, name: Feature store per fold, deps: [G2], outputs: [data/features]}
+  - {id: P3.2, phase: P3, name: "Graph builder (tree, significance, corr, global edges)", deps: [G2], outputs: [src/marketcast/graph, data/graph]}
+  - {id: P3.3, phase: P3, name: "Model code (encoder, fabric, processor, heads)", deps: [P0.2], outputs: [src/marketcast/model, tests/test_model_shapes.py]}
+  - {id: P3.4, phase: P3, name: Training loop and experiment logging, deps: [P3.1, P3.2, P3.3], outputs: [src/marketcast/train]}
+  - {id: P3.5, phase: P3, name: Fabric ablation, deps: [P3.4], outputs: [reports/P3_fabric_ablation.md]}
+  - {id: G3, phase: P3, name: "Gate G3: deterministic volatility beats GARCH and LightGBM", gate: true, deps: [P3.5], outputs: [reports/G3_gate.md]}
+
+  - {id: P4.1, phase: P4, name: FGN noise and sampling heads, deps: [G3], outputs: [src/marketcast/model/fgn.py]}
+  - {id: P4.2, phase: P4, name: Rollout and unrolled fine-tuning, deps: [P4.1], outputs: [src/marketcast/model/rollout.py]}
+  - {id: P4.3, phase: P4, name: Four seeds and full scoring, deps: [P4.2], outputs: [reports/scores/MC-gen]}
+  - {id: P4.4, phase: P4, name: "Trend, sector and shock readouts", deps: [P4.3], outputs: [src/marketcast/readout]}
+  - {id: P4.5, phase: P4, name: Curated supply and group edges (ablation), deps: [P4.3], outputs: [configs/edges_supply.yaml, configs/edges_group.yaml]}
+  - {id: G4, phase: P4, name: "Gate G4: calibrated generative core; vault opened once", gate: true, deps: [P4.4], outputs: [reports/G4_gate.md, reports/vault_log.md]}
+
+  - {id: P5.1, phase: P5, name: Event data acquisition, deps: [G4], outputs: [data/pit/ref_events.parquet]}
+  - {id: P5.2, phase: P5, name: Event structuring and embeddings, deps: [P5.1], outputs: [data/processed/event_tokens]}
+  - {id: P5.3, phase: P5, name: Event assimilation and event heads, deps: [P5.2], outputs: []}
+  - {id: G5, phase: P5, name: "Gate G5: text improves event-day CRPS after cutoff", gate: true, deps: [P5.3], outputs: [reports/G5_gate.md]}
+
+  - {id: P6.1, phase: P6, name: Nightly pipeline and freezing, deps: [G4], outputs: [src/marketcast/live, forecasts/live/ledger.csv]}
+  - {id: P6.2, phase: P6, name: Live scoring, deps: [P6.1], outputs: [reports/live]}
+  - {id: P6.3, phase: P6, name: Portfolio engine (L9) and JSON contract, deps: [G4], outputs: [src/marketcast/decision]}
+  - {id: P6.4, phase: P6, name: Explanation layer with number validator, deps: [P6.3], outputs: [src/marketcast/explain]}
+  - {id: P6.5, phase: P6, name: Household app integration contract, deps: [P6.3], outputs: [docs/app_integration.md]}
+  - {id: G6, phase: P6, name: "Gate G6: 3+ months live calibration", gate: true, deps: [P6.2], outputs: [reports/G6_gate.md]}

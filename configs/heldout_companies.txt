@@ -1,0 +1,234 @@
+# Held-out companies (05 §3, D-14). FROZEN: regenerate only to replace a name that stopped trading.
+# 231 keys = 20 named + 211 stratified; 15.2% of the 1515 companies ever in MC500.
+# key  kind  [symbol]
+INE012A01  named  ACC
+INE016A01  named  DABUR
+INE028A01  named  BANKBARODA
+INE038A01  named  HINDALCO
+INE053A01  named  INDHOTEL
+INE075A01  named  WIPRO
+INE094A01  named  HINDPETRO
+INE111A01  named  CONCOR
+INE151A01  named  TATACOMM
+INE192B01  named  WELSPUNLIV
+INE226A01  named  VOLTAS
+INE245A01  named  TATAPOWER
+INE256A01  named  ZEEL
+INE257A01  named  BHEL
+INE494B01  named  TVSMOTOR
+INE528G01  named  YESBANK
+INE628A01  named  UPL
+INE671H01  named  SOBHA
+INE868B01  named  NCC
+INE987B01  named  NATCOPHARM
+INE007A01  stratified
+INE00H001  stratified
+INE010B01  stratified
+INE015A01  stratified
+INE018A01  stratified
+INE018I01  stratified
+INE019C01  stratified
+INE020B01  stratified
+INE023H01  stratified
+INE026A01  stratified
+INE030A01  stratified
+INE031B01  stratified
+INE036B01  stratified
+INE04I401  stratified
+INE050A01  stratified
+INE052T01  stratified
+INE055A01  stratified
+INE060A01  stratified
+INE063E01  stratified
+INE064C01  stratified
+INE079A01  stratified
+INE07U701  stratified
+INE085A01  stratified
+INE086A01  stratified
+INE095A01  stratified
+INE099J01  stratified
+INE099Z01  stratified
+INE0J5401  stratified
+INE0NNS01  stratified
+INE0NT901  stratified
+INE0VDM01  stratified
+INE0YD401  stratified
+INE102A01  stratified
+INE105J01  stratified
+INE111B01  stratified
+INE116G01  stratified
+INE120A01  stratified
+INE123F01  stratified
+INE131A01  stratified
+INE135B01  stratified
+INE140A01  stratified
+INE147A01  stratified
+INE155A01  stratified
+INE156A01  stratified
+INE160A01  stratified
+INE171A01  stratified
+INE172A01  stratified
+INE179A01  stratified
+INE185H01  stratified
+INE186A01  stratified
+INE188B01  stratified
+INE197A01  stratified
+INE1TAE01  stratified
+INE200A01  stratified
+INE202B01  stratified
+INE202E01  stratified
+INE208C01  stratified
+INE209A01  stratified
+INE209B01  stratified
+INE223G01  stratified
+INE224E01028  stratified
+INE235G01  stratified
+INE236A01  stratified
+INE256C01  stratified
+INE259B01  stratified
+INE274V01  stratified
+INE285H01  stratified
+INE288A01  stratified
+INE290B01  stratified
+INE292A01  stratified
+INE299C01  stratified
+INE303R01  stratified
+INE318J01  stratified
+INE325A01  stratified
+INE330H01  stratified
+INE332H01  stratified
+INE333I01  stratified
+INE340A01  stratified
+INE347G01  stratified
+INE353G01  stratified
+INE371P01  stratified
+INE377Y01  stratified
+INE399G01  stratified
+INE416D01  stratified
+INE416L01  stratified
+INE419M01  stratified
+INE420C01  stratified
+INE426A01  stratified
+INE436A01  stratified
+INE439A01  stratified
+INE439L01  stratified
+INE455J01  stratified
+INE472A01  stratified
+INE481N01  stratified
+INE484C01  stratified
+INE488A01  stratified
+INE491A01  stratified
+INE495C01  stratified
+INE495J01  stratified
+INE497B01  stratified
+INE514G01  stratified
+INE517F01  stratified
+INE522D01  stratified
+INE536H01  stratified
+INE542W01  stratified
+INE545A01  stratified
+INE553K01  stratified
+INE555B01  stratified
+INE572J01  stratified
+INE580A01  stratified
+INE594A01  stratified
+INE598B01  stratified
+INE603A01  stratified
+INE615H01  stratified
+INE615I01  stratified
+INE615P01  stratified
+INE633A01  stratified
+INE640C01  stratified
+INE643K01  stratified
+INE646X01  stratified
+INE648A01  stratified
+INE658G01  stratified
+INE659A01  stratified
+INE660F01  stratified
+INE663A01  stratified
+INE665J01  stratified
+INE671A01  stratified
+INE673G01  stratified
+INE686A01  stratified
+INE688A01  stratified
+INE690A01  stratified
+INE694N01  stratified
+INE698H01  stratified
+INE699H01  stratified
+INE702A01  stratified
+INE704H01  stratified
+INE710A01  stratified
+INE712K01  stratified
+INE713T01  stratified
+INE722A01  stratified
+INE733A01  stratified
+INE736A01  stratified
+INE742F01  stratified
+INE743C01  stratified
+INE745G01  stratified
+INE758E01  stratified
+INE760A01  stratified
+INE761H01  stratified
+INE777K01  stratified
+INE790G01  stratified
+INE794A01  stratified
+INE806T01  stratified
+INE810G01  stratified
+INE819V01  stratified
+INE824G01  stratified
+INE825H01  stratified
+INE831A01  stratified
+INE834M01  stratified
+INE849A01  stratified
+INE850A01  stratified
+INE850D01  stratified
+INE871H01  stratified
+INE891D01  stratified
+INE894F01  stratified
+INE894V01  stratified
+INE898S01  stratified
+INE913H01  stratified
+INE914E01  stratified
+INE914M01  stratified
+INE918Z01  stratified
+INE927C01  stratified
+INE935A01  stratified
+INE947N01  stratified
+INE949H01  stratified
+INE951I01  stratified
+INE953O01  stratified
+INE956O01  stratified
+INE959A01  stratified
+INE968D01  stratified
+INE979A01  stratified
+INE982B01  stratified
+INE982J01  stratified
+INE987C01  stratified
+SYM:ADANIEXPO  stratified
+SYM:AFTEKINFO  stratified
+SYM:AZTECSOFT  stratified
+SYM:BAJAUTOFIN  stratified
+SYM:GESCOCORP  stratified
+SYM:HINDCONS  stratified
+SYM:INDRAYON  stratified
+SYM:INVSTSMART  stratified
+SYM:IVRPRIME  stratified
+SYM:JINDALDRIL  stratified
+SYM:KIRIDYES  stratified
+SYM:MAYTASINFR  stratified
+SYM:MICO  stratified
+SYM:MIRZATAN  stratified
+SYM:MPHASISBFL  stratified
+SYM:NAGARCONST  stratified
+SYM:NAHARSPG  stratified
+SYM:NILKAMPLST  stratified
+SYM:PENTSFWARE  stratified
+SYM:REL  stratified
+SYM:SRIADIKARI  stratified
+SYM:STROPTICAL  stratified
+SYM:TELEDATAGL  stratified
+SYM:TELEDATAIN  stratified
+SYM:TV-18  stratified
+SYM:TV18  stratified
+SYM:UNIWESTBNK  stratified
+SYM:VISUALSOFT  stratified

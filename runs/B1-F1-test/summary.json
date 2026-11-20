@@ -1,0 +1,22 @@
+{
+  "run_id": "B1-F1-test@4c863c865af6",
+  "run_name": "B1-F1-test",
+  "config_hash": "4c863c865af6266dcf007f2acb1d6080496d647f3366253979e1321cf9258248",
+  "git_commit": "nogit",
+  "data_snapshot": "sha256:a11d83a422ec0622ee4daa59aaa67831cf2d7037979fc2bfc367d6947077e161",
+  "fold": "F1",
+  "seed": 0,
+  "smoke": false,
+  "status": "finished",
+  "n_dates": 248,
+  "minutes": 2.58,
+  "crps_h1": 0.5538531271617315,
+  "crps_h5": 0.5929130735279106,
+  "crps_h20": 0.6138318243165362,
+  "qlike_h1": 0.4779534630419686,
+  "qlike_h5": 0.29076406686798034,
+  "qlike_h20": 0.21326896798398318,
+  "in90_h1": 0.8904853573622773,
+  "in90_h5": 0.8894914560523892,
+  "in90_h20": 0.8865787309106405
+}
